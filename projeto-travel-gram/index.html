@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
 </head>
+
 <body>
  <div class="bg-fundo-surfacce">
    <nav class="container">
@@ -55,5 +56,36 @@
     </div>
  </header>
 </div> 
+
+<main id="image-container" class="container">
+ 
+</main>
+
+
+<script>
+  // Seleciona o contêiner onde as imagens serão adicionadas
+  const imageContainer = document.getElementById('image-container');
+  console.log(imageContainer);
+  // Função para adicionar as imagens ao contêiner
+  function addImages() {
+      for (let i = 1; i <= 12; i++) {
+          // Cria um novo elemento de imagem
+          const img = document.createElement('img');
+          
+          // Formata o número da imagem com dois dígitos (ex: "01", "02", ..., "12")
+          const imageNumber = String(i).padStart(2, '0');
+          
+          // Define o src e o alt da imagem
+          img.src = `assets/images/Image ${imageNumber}.png`;
+          img.alt = `Imagem ${imageNumber}`;
+          
+          // Adiciona a imagem ao contêiner
+          imageContainer.appendChild(img);
+      }
+  }
+
+  // Chama a função para adicionar as imagens
+  addImages();
+</script>
 </body>
 </html>
